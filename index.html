@@ -9,59 +9,140 @@
     <title>Women in Tech Cafe</title>
 </head>
 <body>
-    <header>
-        <img src="#" alt="banner" id="banner">
-        <h1>This is the header</h1>
-    </header>
-
-    <nav>
-      <p>The navigation links will go here</p>
-      <ul>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-        <li>Link</li>
-      </ul>
-    </nav>
-
-    <main id="main">
-        <section id="top-section">
-            <div id="user-name-div">
-                <label for="user-name">User Name: </label>
-                <input type="text" id="user-name"><br>
-            </div>
-            <div id="message-div">
-                <label for="msg-input">Leave your review here: </label>
-                <input type="text" id="msg-input">
-            </div>
-            <input type="button" value="Post" id="post-button">
-        </section>
-        <h1>Visitor Review:</h1>
-        <div>
-            <ul id="feed">
-                <li class="msg">
-                    <strong>Donald Trump</strong> - 3/25/2023<br><br>
-                    I visited Women in Tech Cafe while in town and it was by far the best experience I've ever had. Businesses like this one is what makes America great again. The food was out of this world and the service was outstanding as well. I will be recommending this cafe to all my friends and family. I will definitely be back!!
-                </li>
-                <li class="msg">
-                    <strong>Joe Biden</strong> - 3/26/2023<br><br>
-                    Donald highly recommended this place. It's about the only thing we'll ever agree on.
-                </li>
-                <li class="msg">
-                    <strong>Barack Obama</strong> - 3/27/2023<br><br>
-                    Yes we can! We can support businesses like Women in Tech Cafe. Clara, Tracy, Jacky, and Michelle provide outstanding service and I will be visiting their establishment many more times.
-                </li>
-            </ul>
+  
+  <section id="banner">
+    <div id="carousel">
+      <div id="window">
+        <div id="imageSlider">
+          <img src="https://www.cookingclassy.com/wp-content/uploads/2016/05/puff_pastry_fruit_tarts_ricotta_cream_filling13.-500x500.jpg" alt="tart" />
+          <img src="https://whereismyspoon.co/wp-content/uploads/2019/03/berry-cake-puff-pastry-200x200.jpg" alt="Berry Cake" />
+          <img src="https://bakingmischief.com/wp-content/uploads/2020/09/small-chocolate-cake-image-square-200x200.jpg" alt="chocolate cake" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvQxkTt7eurFY5GuukUtRdEwQ-eTI36hg48w&usqp=CAU" alt="egg tart" />
+          <img src="https://i2.wp.com/completelydelicious.com/wp-content/uploads/2016/08/nectarine-puff-pastry-tart-4-200x200.jpg" alt="Fruit Puff" />
+          <img src="./imgs/cup.jpeg" alt="Coffee Cup" />
+          <img src="https://www.theflavorbender.com/wp-content/uploads/2018/02/Chocolate-Creme-Patissiere-The-Flavor-Bender-Featured-Image-SQ-10-200x200.jpg" alt="pudding" />
         </div>
+      </div>
+    </div>
+    <div id="button-div">      
+      <button onclick="previousImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
+    
+    <script>
+      var position = 0;
+        
+      function previousImage() {
+        if (position > 0){
+          const imageSlider = document.getElementById('imageSlider');
+          position -= 1;
+          var offset = position * 201;
+          imageSlider.style.transform = "translateX(-" + offset + "px)";
+        }
+      }
+      function nextImage() {
+        if(position < 2){
+          const imageSlider = document.getElementById('imageSlider');
+          position += 1;
+          var offset = position * 201;
+          imageSlider.style.transform = "translateX(-" + offset + "px)";
+        } 
+      }
+      // start original carousel script
+      // var position = 0;
+      
+      // function nextImage() {
+      //   position = position + 101;
+        
+        
+      //   var slider = document.getElementById('imageSlider')
+      //   slider.style.transform = `translateY(-${position}%)`;
+      // }
+      // end original carousel script
+    </script>      
+  </section>
 
-    </main>
+  <header>    
+    <div class="bannerWithLogo" style="background-color: tan; display: flex; justify-content:space-around; align-items: center;">
+        
+      <div>
+          <!--profile picture-->
+          <img id="profilePic" src="./imgs/coffee profilepic.png">
+      </div>
+
+      <div>
+          <!--Logo picture -->
+          <img id="logoPic" src="./imgs/biggerwomenintechlogo-removebg.png">
+      </div>
+
+      <div class="container">
+          <!--Sign in button-->
+          <button type="submit" style="border-radius: 30px; font-size: 22px; font-weight: 500; padding: 15px 50px;" onclick="openPopup()">Sign In</button>
+          <p id="successfulSignInMessage"></p>
+          <!--<div class="popup" id="popup"> -->
+            <!-- <label for="username"><b>Username</b></label> -->
+            <!-- <input type="text" name="username" id="username" required> -->
+            
+            <!-- <button type="submit" onclick="closePopup()">Submit</button>  -->
+          <!-- </div> -->
+      </div>
+    </div>
+
+    <script>
+        function openPopup() {
+          var text;
+          var username = prompt("Please enter your username to Sign In");
+          switch(username) {
+            default:
+              text = username + ", you are now signed in!";
+          }
+          document.getElementById("successfulSignInMessage").innerHTML = text;
+        }
+    </script>        
+  </header>
+
+  <nav>
+      <p><a href="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80" target="_blank">Croissants</a></p>
+      <p><a href="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">Muffins</a></p>
+      <p><a href="https://media.istockphoto.com/id/1339241159/photo/set-of-different-delicious-cakes-isolated-on-white.jpg?s=612x612&w=is&k=20&c=QnYcZtldeDD6_PE9_yJWB5sDZkpE01IAinCLJYkmU2I=">Cakes</a></p>
+      <p><a href="https://plus.unsplash.com/premium_photo-1670426502280-8985122ab689?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">Donuts</a></p>
+      <p><a href="https://media.istockphoto.com/id/1400194993/photo/cappuccino-art.jpg?b=1&s=170667a&w=0&k=20&c=DuHIekd_Anu8GYuYZCpDacPXU5nZClF0ke3exNHvco4=">Beverages</a></p>
+  </nav>
+
+  <main id="main">
+      <section id="top-section">
+          <div id="user-name-div">
+              <label for="user-name">User Name: </label>
+              <input type="text" id="user-name"><br>
+          </div>
+          <div id="message-div">
+              <label for="msg-input">Leave your review here: </label>
+              <input type="text" id="msg-input">
+          </div>
+          <div>
+              <input type="file" accept="image/jpeg, image/png, image/jpg" id="upload">
+          </div>
+          <input type="button" value="Post" id="post-button">
+      </section>
+      <h1>Visitor Review:</h1>
+      <div>
+          <ul id="feed">
+              <li class="msg">
+                  <strong>Donald Trump</strong> - 3/25/2023<br><br>
+                  I visited Women in Tech Cafe while in town and it was by far the best experience I've ever had. Businesses like this one is what makes America great again. The food was out of this world and the service was outstanding as well. I will be recommending this cafe to all my friends and family. I will definitely be back!!
+                  <br><br><img src="./imgs/trump.png" alt="trump">
+              </li>
+              <li class="msg">
+                  <strong>Joe Biden</strong> - 3/26/2023<br><br>
+                  Donald highly recommended this place. It's about the only thing we'll ever agree on.
+              </li>
+              <li class="msg">
+                  <strong>Barack Obama</strong> - 3/27/2023<br><br>
+                  Yes we can! We can support businesses like Women in Tech Cafe. Clara, Tracy, Jacky, and Michelle provide outstanding service and I will be visiting their establishment many more times.
+              </li>
+          </ul>
+      </div>
+
+  </main>
 </body>
 </html>
