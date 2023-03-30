@@ -2,8 +2,9 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
     display: grid;
+    gap: 2px;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
     width: 1005px;
 }
 
@@ -56,11 +57,32 @@ header > div {
 
 
 nav {
-    background-color: aqua;
+    background-color: tan;
     font-family:sans-serif;
     font-weight: bold;
     grid-row: span 3;
     grid-column: span 1;
+    padding: 50px 0 0 25px; 
+
+}
+
+#menu-items {
+    font-size: 35px;
+    border-top: 5px double white;
+    border-bottom: 5px double white;
+    padding-left: 5px;
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+a:hover {
+    color: rgb(96, 64, 23);
+    font-size: 30px;
 }
 
 main {
@@ -78,8 +100,8 @@ main {
     align-items: center;
     font-weight: bolder;
     font-size: larger;
-    background-color: whitesmoke;
-    border: 7px inset lightgray;
+    background-color: rgb(240, 239, 233);
+    border: 7px double rgb(104, 32, 32);
     width: 95%;
     height: 60px;
     margin: 5px auto;
@@ -130,18 +152,18 @@ div input {
     justify-content: start;
     flex-wrap: wrap;
     list-style: none;
-    border: 6px outset lightgray;
+    border: 7px double rgb(104, 32, 32);
     height: 450px;
     overflow: scroll;
 }
 
 .msg {
     border-left: 9px solid black;
-    width: 175px;
+    width: 174px;
     max-height: 150px;
     padding: 15px;
     margin: 10px 10px;
-    background-color: aliceblue;
+    background-color: rgb(240, 239, 233);
     overflow: scroll;
 }
 
@@ -154,5 +176,41 @@ li > img {
 
 }
 
+footer {
+    background-color: rgb(240, 239, 233);
+    display: flex;
+    justify-content: space-between;
+    font-family: Helvetica;
+    grid-column: span 4;
+    grid-row: span 1;
+    padding: 30px;
+    
+}
+
+.social {
+    height: 50px;
+}
+
+div#social-media {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: end;
+}
+
+#contact {
+    text-align: end;
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-content: end;    
+}
+
+#copy {
+    margin: 0;
+}
 
 
