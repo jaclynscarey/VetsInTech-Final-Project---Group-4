@@ -31,3 +31,32 @@ function addMsg() {
 }
 
 buttonEl.addEventListener('click', addMsg);
+
+var position = 0;
+  
+function previousImage() {
+  if (position > 0){
+    const imageSlider = document.getElementById('imageSlider');
+    position -= 1;
+    var offset = position * 201;
+    imageSlider.style.transform = "translateX(-" + offset + "px)";
+  }
+}
+function nextImage() {
+  if(position < 2){
+    const imageSlider = document.getElementById('imageSlider');
+    position += 1;
+    var offset = position * 201;
+    imageSlider.style.transform = "translateX(-" + offset + "px)";
+  } 
+}
+
+function openPopup() {
+  var text;
+  var username = prompt("Please enter your username to Sign In");
+  switch(username) {
+    default:
+      text = username + ", you are now signed in!";
+  }
+  document.getElementById("successfulSignInMessage").innerHTML = text;
+}

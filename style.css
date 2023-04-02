@@ -55,6 +55,19 @@ header > div {
     width: 200px;
 }
 
+#sign-in-button {
+  border-radius: 30px; 
+  font-size: 22px; 
+  font-weight: 500; 
+  padding: 15px 50px;
+}
+
+.bannerWithLogo {
+  background-color: tan; 
+  display: flex; 
+  justify-content:space-around; 
+  align-items: center;
+}
 
 nav {
     background-color: tan;

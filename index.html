@@ -28,42 +28,10 @@
       <button onclick="previousImage()">Previous</button>
       <button onclick="nextImage()">Next</button>
     </div>
-    
-    <script>
-      var position = 0;
-        
-      function previousImage() {
-        if (position > 0){
-          const imageSlider = document.getElementById('imageSlider');
-          position -= 1;
-          var offset = position * 201;
-          imageSlider.style.transform = "translateX(-" + offset + "px)";
-        }
-      }
-      function nextImage() {
-        if(position < 2){
-          const imageSlider = document.getElementById('imageSlider');
-          position += 1;
-          var offset = position * 201;
-          imageSlider.style.transform = "translateX(-" + offset + "px)";
-        } 
-      }
-      // start original carousel script
-      // var position = 0;
-      
-      // function nextImage() {
-      //   position = position + 101;
-        
-        
-      //   var slider = document.getElementById('imageSlider')
-      //   slider.style.transform = `translateY(-${position}%)`;
-      // }
-      // end original carousel script
-    </script>      
   </section>
 
   <header>    
-    <div class="bannerWithLogo" style="background-color: tan; display: flex; justify-content:space-around; align-items: center;">
+    <div class="bannerWithLogo">
         
       <div>
           <!--profile picture-->
@@ -77,7 +45,7 @@
 
       <div class="container">
           <!--Sign in button-->
-          <button type="submit" style="border-radius: 30px; font-size: 22px; font-weight: 500; padding: 15px 50px;" onclick="openPopup()">Sign In</button>
+          <button id="sign-in-button" type="submit" onclick="openPopup()">Sign In</button>
           <p id="successfulSignInMessage"></p>
           <!--<div class="popup" id="popup"> -->
             <!-- <label for="username"><b>Username</b></label> -->
@@ -87,18 +55,6 @@
           <!-- </div> -->
       </div>
     </div>
-
-    <script>
-        function openPopup() {
-          var text;
-          var username = prompt("Please enter your username to Sign In");
-          switch(username) {
-            default:
-              text = username + ", you are now signed in!";
-          }
-          document.getElementById("successfulSignInMessage").innerHTML = text;
-        }
-    </script>        
   </header>
 
   <nav>
